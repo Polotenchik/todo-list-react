@@ -14,10 +14,25 @@ const { Header, Content } = Layout;
 const TodoEditPage = ({ history }) => (
     <Layout>
         <Header>
-
+            <Row clasName='header'>
+                <Col span={ 24 }>
+                    <h1>TO-DO LIST</h1>
+                </Col>
+            </Row>
         </Header>
         <Content>
-            
+            <Row>
+                <Col span={ 4 }>
+                    <span className='go-back' onClick={ history.goBack }>
+                        <Icon type='arrow-left'> Go home
+                    </span>
+                </Col>
+                <Col span={ 15 } offset={ 2 }>
+                    <TodoEditForm />
+                </Col>
+            </Row>
         </Content>
     </Layout>
-)
+);
+
+export default TodoEditPage;
