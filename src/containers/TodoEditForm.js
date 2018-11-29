@@ -21,4 +21,17 @@ const mapStateToProps = ({ data }, { match }) => {
     };
 };
 
-const mapDispatchToProps
+const mapDispatchToProps = (dispatch, {match}) => ({
+    onSave: todo => {
+        dispatch(updateTodo({
+            id: Number(match.params.id),
+            ...todo
+        }));
+        
+        message.success('Todo was updated');
+    }
+});
+
+const WrappedTodoEditForm = Form.create()(TodoEditForm);
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WrappedTodoEditForm));
