@@ -93,3 +93,22 @@ class TodoEditForm extends Component {
     }
 }
 
+let categoryShape = PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    value:  PropTypes.string.isRequired,
+});
+
+categoryShape.children = PropTypes.arrayOf(categoryShape);
+
+TodoEditForm.propTypes = {
+    categories: PropTypes.arrayOf(categoryShape).isRequired,
+    todo: PropTypes.shape({
+        id: AirbnbPropTypes.nonNegativeInteger.isRequired,
+        title: PropTypes.string.isRequired,
+        completed: PropTypes.bool.isRequired,
+        description: PropTypes.string.isRequired,
+    })
+};
+
+export default TodoEditForm;
