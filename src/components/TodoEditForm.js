@@ -18,6 +18,12 @@ class TodoEditForm extends Component {
         changed: false
     };
 
+    convertFormValues = ({ title, description, category, completed }) => ({
+        title: title.trim(),
+        category: Number(category),
+        completed
+    });
+
     componentWillReceiveProps(nextProps) {
         const { form, todo } = nextProps;
 
@@ -33,6 +39,57 @@ class TodoEditForm extends Component {
         }
     }
 
-    
+    onSave = () => {
+        const { form, onSave } = this.props;
 
+        form.validateFields((err, values) => {
+            if (!err) {
+                onSave(this.convertFormValues(values));
+            }
+        });
+    }
+
+    renderCategories = (data) => data.map(({ id, title, children }) => {
+        return <TreeNode key={ id } title={ title } selected={ true }>
+                    { children ? this.renderCategories(children) : '' }
+                </TreeNode>;
+    });
+
+    render() {
+        const { categories, form, todo } = this.props;
+        const { changed } = this.state;
+
+        return (
+            <Form layout='horizontal' hideRequiredMark={ true }>
+                <FormItem label='Title' { ...formItemLayout }>
+                    { form.getFieldDecorator('title', {
+                        rules: [{ required: true, message: 'Title is required', whitespace: true }],
+                        initialValue: todo.title
+                    })(<Input placeholder='Enter title' />)}
+                </FormItem>
+                <FormItem label='Status' { ...formItemLayout }>
+                    { form.getFieldDecorator('completed', {
+                        initialValue: todo.completed
+                    })(<Switch checkedChildren='Done' unCheckedChildren='Active' defaultChecked={ todo.completed } />)}
+                </FormItem>
+                <FormItem label='Category' { ...formItemLayout }>
+                    { form.getFieldDecorator('category', {
+                        initialValue: todo.category.toString()
+                    })(<TreeSelect dropdownStyle={{ maxHeight: 400, overflow: 'auto'}} treeData={ categories } treeDefaultExpandAll />)}
+                </FormItem>
+                <FormItem label='Description' { ...formItemLayout }>
+                    { form.getFieldDecorator('description', {
+                        initialValue: todo.description
+                    })(<TextArea placeholder='Enter description' style={{ height: 100 }}/>)}
+                </FormItem>
+                <FormItem className='block-save-todo'>
+                    { changed ? '' : <span>Nothing to </span> }
+                    <Button type='primary' htmlType='submit' disabled={ !changed } onClick={ this.onSave }>
+                        Save
+                    </Button>
+                </FormItem>
+            </Form>
+        );
+    }
 }
+
