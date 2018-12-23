@@ -1,4 +1,4 @@
-import queryString from 'query-string';
+import queryString from 'querystring';
 
 export const addParameter = (search, obj) => {
     const query = queryString.parse(search);

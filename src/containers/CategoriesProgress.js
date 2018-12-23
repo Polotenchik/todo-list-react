@@ -11,6 +11,8 @@ const getCategoriesIds = (categories) => {
 
 const getCompleted = (ids, todos) => {
     const uncompletedIds = todos.filter(todo => !todo.completed).map(todo => todo.category);
+
+    return ids.filter(id => uncompletedIds.indexOf(id) === -1);
 };
 
 const mapStateToProps =({ data }) => {

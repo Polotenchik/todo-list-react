@@ -6,7 +6,7 @@ import { pushQueryParam as push, getCategory } from '../utils/query';
 import { deleteCategory, toggleModal } from '../actions';
 
 const mapStateToProps = ({ data }, { location }) => ({
-    categories : data.parent.categories,
+    categories : data.present.categories,
     selected : getCategory(location.search)
 });
 
