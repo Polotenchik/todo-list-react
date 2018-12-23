@@ -14,12 +14,12 @@ const TodoList = ({ todos, onClick, numberOfAll }) => {
         <div>
             <ul style={{ listStyleType: 'none'}}>
                 { todos.map(todo => 
-                    <Todo key={ todo.id } onClick={ () => onCLick(todo.id) } {...todo} />
+                    <Todo key={ todo.id } onClick={ () => onClick(todo.id) } {...todo} />
                 )}
             </ul>
             <Row>
                 <Col span={24} offset={6}>
-                    <ShowDone />
+                    <ShowDown />
                 </Col>
             </Row>
         </div>

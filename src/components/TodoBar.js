@@ -41,7 +41,7 @@ class TodoBar extends Component {
                 <FormItem>
                     { form.getFieldDecorator('search', { initialValue: title })(
                         <Input 
-                            placeholder='Type to search. Enter to add' onChange={ e => this.onSearch(e,target.value)}
+                            placeholder='Type to search. Enter to add' onChange={ e => this.onSearch(e.target.value)}
                             onPressEnter={ this.onAdd } className='search-todo'
                         />
                     )}

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { pushQueryParam as push, getShowDone } from '../utils/query';
 
 const mapStateToProps = (state, { location }) => ({
-    showDone : getShowDone(lacation,search)
+    showDone : getShowDone(location.search)
 });
 
 const mapDispatchToProps = (dispatch, { history, location }) => ({

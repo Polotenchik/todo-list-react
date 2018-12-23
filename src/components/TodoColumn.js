@@ -1,10 +1,10 @@
 import React from 'react';
 import VisibleTodoList from '../containers/VisibleTodoList';
-import TodBar from '../containers/TodoBar';
+import TodoBar from '../containers/TodoBar';
 
 const TodoColumn = () => (
     <div>
-        <TadoBar />
+        <TodoBar />
         <div className='todo-list'>
             <VisibleTodoList />
         </div>

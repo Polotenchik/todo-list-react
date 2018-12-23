@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CheckBox, Icon } from 'antd';
+import { Checkbox, Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
 const MAX_TITLE_LENGTH = 30;
@@ -9,7 +9,7 @@ const truncateTitle = title => `${title.substring(0, MAX_TITLE_LENGTH)}${title.l
 
 const Todo =({ onClick, title, completed, id }) => (
     <li>
-        <CheckBox onChange={ onClick } checked={completed} />
+        <Checkbox onChange={ onClick } checked={completed} />
         <span style={{ 'textDecoration' : completed ? 'line-through' : '' }}>
             { truncateTitle(title) }
         </span>

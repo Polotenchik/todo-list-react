@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { toggleTodo } from '../actions';
 import { getFilter, getShowDone } from '../utils/query';
-import TodoList from '../components/ TodoList';
+import TodoList from '../components/TodoList';
 
 const filterByCategoryAndTitle = (todos, query) => {
     const { category, title } = getFilter(query);

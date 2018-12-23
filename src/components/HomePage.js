@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Icon, Layout, Button } from 'antd';
 import PropTypes from 'prop-types';
-import TodoEditForm from '../containers/CategoriesTree';
+import CategoriesTree from '../containers/CategoriesTree';
 import TodoColumn from './TodoColumn';
 
 const { Header, Content } = Layout;
