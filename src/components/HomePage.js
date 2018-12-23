@@ -11,7 +11,7 @@ const HomePage = ({undo, redo, nothingUndo, nothingRedo}) => (
         <Header>
             <Row className='header'>
                 <Col span={ 7 }><h1>Todo-list</h1></Col>
-                <Col span { 7 } offset ={ 10 } >
+                <Col span={ 7 } offset ={ 10 } >
                     <Button.Group>
                         <Button onClick={ undo } disabled = { nothingUndo }>
                             <Icon type='left' /> Undo

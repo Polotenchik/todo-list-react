@@ -24,7 +24,7 @@ const TodoEditPage = ({ history }) => (
             <Row>
                 <Col span={ 4 }>
                     <span className='go-back' onClick={ history.goBack }>
-                        <Icon type='arrow-left'> Go home
+                        <Icon type='arrow-left' /> Go home
                     </span>
                 </Col>
                 <Col span={ 15 } offset={ 2 }>

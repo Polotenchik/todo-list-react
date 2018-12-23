@@ -4,11 +4,11 @@ import { withRouter } from 'react-router-dom';
 import TodoEditForm from '../components/TodoEditForm';
 import { updateTodo } from '../actions';
 
-const mapCategoty = ({ id, title, children }) => ({
+const mapCategory = ({ id, title, children }) => ({
     key: id.toString(),
     value: id.toString(),
     label: title,
-    children: children && children.map(mapCategoty)
+    children: children && children.map(mapCategory)
 });
 
 const mapStateToProps = ({ data }, { match }) => {

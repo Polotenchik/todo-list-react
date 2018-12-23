@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ProgressBar from '../components/ProgressBar';
 
 const getCategoriesIds = (categories) => {
+    return categories.reduce((ids, category) => {
         const result = [...ids, category.id];
 
         return category.children ? result.concat(getCategoriesIds(category.children)) : result;

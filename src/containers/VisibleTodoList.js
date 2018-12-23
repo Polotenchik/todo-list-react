@@ -20,7 +20,7 @@ const mapStateToProps = ({data}, {location}) => {
     const allTodos = filterByCategoryAndTitle(data.present.todos, location.search);
 
     return  {
-        todos: getVisibleTodos(allTodos, location.search);
+        todos: getVisibleTodos(allTodos, location.search),
         numberOfAll: allTodos.length
     };
 };
