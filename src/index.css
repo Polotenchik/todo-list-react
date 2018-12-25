@@ -13,3 +13,35 @@ a {
 }
 
 /* antd */
+
+.ant-layout {
+  background: #cdcdce;
+  font-size: 16px;
+}
+
+.ant-layout-header {
+  background: #cccccc;
+  box-shadow: 0 2px 8px #f0f1f2;
+}
+
+.ant-layout-header h1 {
+  font-size: 30px;
+  color: #c0bfbf;
+}
+
+.ant-layout-content {
+  margin: 40px auto 0 auto;
+  width: 700px;
+}
+
+.ant-tree {
+  margin: 0 0 0 -10px;
+  overflow-y: auto;
+}
+
+.ant-tree li {
+  padding: 2px 0;
+}
+
+
+
