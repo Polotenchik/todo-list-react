@@ -43,5 +43,21 @@ a {
   padding: 2px 0;
 }
 
+.ant-tree-title .anticon {
+  padding-left: 4px;
+}
+
+.ant-tree-title .anticon:first-child {
+  padding-left: 7px;
+}
+
+.ant-progress-text {
+  width: 6em;
+}
+
+.ant-progress-show-info .ant-progress-outer {
+  padding-right: calc(6em + 8px);
+  margin-right: calc(-6em - 8px);
+}
 
 
