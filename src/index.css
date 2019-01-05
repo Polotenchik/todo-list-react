@@ -80,3 +80,39 @@ a {
   font-size: 16px;
 }
 
+.header {
+  margin: 0 auto;
+  width: 800px;
+}
+
+.todo-list {
+  padding-top: 15px;
+}
+
+.todo-list ul {
+  list-style-type: none;
+}
+
+.search-todo {
+  width: 255px;
+}
+
+.btn-show-done {
+  color: #c0bfbf;
+}
+
+.block-save-todo .ant-form-item-control {
+  float: right;
+  color: #c0bfbf;
+}
+
+.go-back {
+  cursor: pointer;
+}
+
+.go-back:hover {
+  color: #40a9ff;
+  outline: 0;
+  text-decoration: none;
+}
+
